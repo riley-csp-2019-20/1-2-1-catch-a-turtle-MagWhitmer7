@@ -4,13 +4,13 @@ import turtle as trtl
 import random
 
 #-----game configuration----
-shape = "arrow"
-size= 3
+shape = "circle"
+size= .5
 colour= "palegreen"
 score= 0
 
 font_setup = ("Times New Roman", 20, "italic")
-timer = 5
+timer = 30
 counter_interval = 1000   #1000 represents 1 second
 timer_up = False
 
@@ -34,7 +34,7 @@ counter.ht()
 counter.penup()
 counter.goto(290, -350)
 counter.pendown()
-counter.pencolor("forestgreen")
+counter.pencolor("aquamarine")
 
 #-----game functions--------
 def turtle_clicked (x,y):
@@ -67,14 +67,13 @@ def countdown():
 def game_over ():
     neb.penup()
     neb.goto(500 , 500)
-    wn.bgcolor("crimson")
-
-
+    wn.bgcolor("midnightblue")
 
 #-----events----------------
 neb.onclick(turtle_clicked)
 
 
 wn = trtl.Screen()
+wn.bgcolor("dimgrey") # customization - changed background colour
 wn.ontimer(countdown, counter_interval)
 wn.mainloop()
